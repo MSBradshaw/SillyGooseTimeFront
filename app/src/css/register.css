@@ -1,0 +1,35 @@
+.form_item{
+	margin-left: auto;
+	width: fit-content;
+	margin-top: 10px;
+}
+
+.form_item label{
+	line-height: 40px;
+	font-size: 30px;
+	margin-right: 15px;
+}
+
+.form_item input{
+	line-height: 40px;
+	font-size: 30px;
+	height: 40px;
+}
+
+.form_item textarea{
+	line-height: 40px;
+	font-size: 30px;
+	height: 100px;
+}
+
+.form_item select{
+	line-height: 40px;
+	font-size: 30px;
+	height: 100px;
+	width: 301px;
+}
+
+form {
+	width: 500px;
+    margin: auto;
+}

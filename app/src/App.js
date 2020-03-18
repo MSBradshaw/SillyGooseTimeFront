@@ -1,14 +1,13 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import home from './components/home';
+import register from './components/register';
 import logo from './big-goose.png';
 import './App.css';
-
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            message: 'Default Message'
-        }
     }
     render(){
         return(
@@ -18,26 +17,15 @@ class App extends React.Component {
                     <p>
                         It's Silly Goose Time!
                     </p>
-                    <form>
-                        <label for="message">Secret Message:</label>
-                        <input type="text" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)}></input>
-                        <button onClick={this.sendMessage.bind(this)}>Send Message</button>
-                    </form>
                 </header>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/" component={home} exact/>
+                        <Route path="/register" component={register}/>
+                    </Switch>
+                </BrowserRouter>
             </div>
         )
-    }
-    onMessageChange(event){
-        this.setState({message: event.target.value})
-    }
-    sendMessage(event){
-        event.preventDefault()
-        console.log(this.state.message)
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", 'http://localhost:3000', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        console.log('{"Cheese":"'+this.state.message+'"}')
-        xhr.send('{"Cheese":"'+this.state.message+'"}');
     }
 }
 
