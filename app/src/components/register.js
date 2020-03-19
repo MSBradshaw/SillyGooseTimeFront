@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/register.css';
-import logo from '../big-goose.png';
-import ImageUploader from 'react-images-upload';
+
 const axios = require("axios");
 
 class Register extends React.Component {
@@ -12,9 +11,10 @@ class Register extends React.Component {
             email:'',
             password:'',
             interests:'',
-            zip:'',
+            location:'',
             picture_path:'',
-            bio:''
+            bio:'',
+            id:this.props.match.params
         }
         this.onChange = this.onChange.bind(this);
     }
@@ -41,14 +41,14 @@ class Register extends React.Component {
     render(){
         // generate multiple more or less identical form fields
         // these are their names, they much match what is in state
-        var fields = ['name','email','password','zip','interests'];
+        var fields = ['name','email','password','location','interests'];
         var items = [];
         // these need to be ordered the same at the fields list
         var state_values = [
             this.state.name,
             this.state.email,
             this.state.password,
-            this.state.zip,
+            this.state.location,
             this.state.interests];
         // create a div with stuff in it for each one
         for (const [index, value] of fields.entries()) {

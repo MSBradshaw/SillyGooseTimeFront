@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import home from './components/home';
 import register from './components/register';
-import uploader from './components/uploader';
+import user from './components/user';
 import logo from './big-goose.png';
 import './App.css';
 
@@ -23,7 +23,7 @@ class App extends React.Component {
                     <Switch>
                         <Route path="/" component={home} exact/>
                         <Route path="/register" component={register}/>
-                        <Route path="/uploader" component={uploader}/>
+                        <Route path="/user/:id" component={user}/>
                     </Switch>
                 </BrowserRouter>
             </div>

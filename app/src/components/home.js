@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../big-goose.png';
 import '../App.css';
 
 class Home extends React.Component {
