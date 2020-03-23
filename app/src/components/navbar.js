@@ -39,8 +39,8 @@ class NavBar extends React.Component {
 				<div>
 					<a class="nav_item" href="/">Home</a>
 					<a class="nav_item" href="/login">Login</a>
-					<a class="nav_item" href="/register">Register User</a>
-					<a class="nav_item" href="/register">Register Business</a>
+					<a class="nav_item" href="/registeruser">Register User</a>
+					<a class="nav_item" href="/registerplace">Register Business</a>
 				</div>
 			)
 		}

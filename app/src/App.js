@@ -6,6 +6,8 @@ import user from './components/user';
 import login from './components/login';
 import profile from './components/profile';
 import updateprofile from './components/updateprofile';
+import registeruser from './components/registeruser';
+import registerplace from './components/registerplace';
 import NavBar from './components/navbar';
 
 import logo from './big-goose.png';
@@ -28,11 +30,12 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Switch>
                         <Route path="/" component={home} exact/>
-                        <Route path="/register" component={register}/>
                         <Route path="/user/:id" component={user}/>
                         <Route path="/login" component={login}/>
                         <Route path="/profile" component={profile}/>
                         <Route path="/updateprofile" component={updateprofile}/>
+                        <Route path="/registeruser" component={registeruser}/>
+                        <Route path="/registerplace" component={registerplace}/>
                     </Switch>
                 </BrowserRouter>
             </div>

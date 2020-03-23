@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/register.css';
 import '../css/updateprofile.css';
+import '../css/register.css';
 import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
 
 const axios = require("axios");
@@ -90,7 +90,7 @@ class UpdateProfile extends React.Component {
 					<img src={"http://localhost:8082/" + this.state['picture_path']} />
 				</div>
 				<p class="change_photo_label">Change Photo</p>
-                <div class="form_item">
+                <div class="form_item photo_upload">
                     <input type="file" name="myImage" onChange= {this.onChange} />
                 </div>
                 <button onClick={this.sendMessage.bind(this)}>Save</button>

@@ -33,3 +33,11 @@ form {
 	width: 500px;
     margin: auto;
 }
+
+.photo_upload {
+	margin-left: 0 !important;
+}
+
+.photo_upload input{
+	font-size: 20px !important;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/user.css';
-import UserProp from './userprops';
+import Register from './register';
 
-class User extends React.Component {
+class RegisterUser extends React.Component {
 
     constructor(props) {
         super(props);
@@ -12,11 +12,10 @@ class User extends React.Component {
 
     render(){
         return(
-            <UserProp user_id={this.props.match.params['id']} />
-
+            <Register type={'users'} />
         )
     }
 
 }
 
-export default User;
+export default RegisterUser;

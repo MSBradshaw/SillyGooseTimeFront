@@ -22,7 +22,7 @@ class Profile extends React.Component {
 		var cookies = get_auth_cookies();
         return(
 			<div>
-			<h2 class="edit_button"><a src="">Edit Profile</a></h2>
+			<h2 class="edit_button"><a href="/updateprofile">Edit Profile</a></h2>
 
 			<UserProp user_id={cookies[2]}/>
 			</div>

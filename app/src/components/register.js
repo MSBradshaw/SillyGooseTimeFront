@@ -14,7 +14,7 @@ class Register extends React.Component {
             location:'',
             picture_path:'',
             bio:'',
-            id:this.props.match.params
+            type_of_user: this.props.type
         }
         this.onChange = this.onChange.bind(this);
     }
@@ -67,7 +67,7 @@ class Register extends React.Component {
                     <label for="bio">bio</label>
                     <textarea type="text" id="bio" value={this.state.bio} onChange={this.onMessageChange.bind(this)}></textarea>
                 </div>
-                <div class="form_item">
+                <div class="form_item photo_upload">
                     <input type="file" name="myImage" onChange= {this.onChange} />
                 </div>
                 <button onClick={this.sendMessage.bind(this)}>Register</button>
@@ -82,11 +82,14 @@ class Register extends React.Component {
     sendMessage(event){
         event.preventDefault()
         // From: https://stackoverflow.com/questions/50774176/sending-file-and-json-in-post-multipart-form-data-request-with-axios
+        var self = this;
         axios({
           method: 'post',
           url: 'http://localhost:8081/users',
           data: this.state
-        })
+      }).then(function(response){
+          window.location.replace("/login");
+      });
     }
 }
 
