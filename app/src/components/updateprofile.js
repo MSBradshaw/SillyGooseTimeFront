@@ -1,16 +1,9 @@
 import React from 'react';
 import '../css/register.css';
 import '../css/updateprofile.css';
+import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
 
 const axios = require("axios");
-
-function get_auth_cookies(){
-	var cookies = document.cookie
-	var email = cookies.match(/sillygoose_email=[^\s]*;/g)[0].replace('sillygoose_email=','').replace(';','');
-	var auth = cookies.match(/sillygoose_auth=.*(;|$)/g)[0].replace('sillygoose_auth=','').replace(';','');
-	var id = cookies.match(/sillygoose_id=[^\s]*/g)[0].replace('sillygoose_id=','');
-	return([email,auth,id]);
-}
 
 class UpdateProfile extends React.Component {
     constructor(props) {

@@ -6,6 +6,7 @@ import user from './components/user';
 import login from './components/login';
 import profile from './components/profile';
 import updateprofile from './components/updateprofile';
+import NavBar from './components/navbar';
 
 import logo from './big-goose.png';
 import './App.css';
@@ -22,6 +23,7 @@ class App extends React.Component {
                     <p>
                         It's Silly Goose Time!
                     </p>
+                    <NavBar />
                 </header>
                 <BrowserRouter>
                     <Switch>

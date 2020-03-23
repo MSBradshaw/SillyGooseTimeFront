@@ -1,0 +1,10 @@
+.nav_item{
+	z-index: 1;
+	margin: 10px;
+	color: white;
+	text-decoration: none;
+}
+
+.nav_item:hover {
+	opacity: .5;
+}
