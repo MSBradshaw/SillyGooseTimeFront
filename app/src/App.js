@@ -5,6 +5,7 @@ import register from './components/register';
 import user from './components/user';
 import login from './components/login';
 import profile from './components/profile';
+import updateprofile from './components/updateprofile';
 
 import logo from './big-goose.png';
 import './App.css';
@@ -29,6 +30,7 @@ class App extends React.Component {
                         <Route path="/user/:id" component={user}/>
                         <Route path="/login" component={login}/>
                         <Route path="/profile" component={profile}/>
+                        <Route path="/updateprofile" component={updateprofile}/>
                     </Switch>
                 </BrowserRouter>
             </div>

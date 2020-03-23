@@ -1,0 +1,8 @@
+.user-profile__image-wrapper img {
+	width: 100%;
+}
+
+.change_photo_label{
+	width: fit-content;
+    font-size: 20px;
+}
