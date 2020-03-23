@@ -28,7 +28,7 @@ class Register extends React.Component {
                 'content-type': 'multipart/form-data'
             }
         };
-        axios.post("http://localhost:3000/photos",formData,config)
+        axios.post("http://localhost:8081/photos",formData,config)
             .then((response) => {
                 console.log(response)
                 // the response if successful is the path to the file on the server
@@ -36,6 +36,7 @@ class Register extends React.Component {
                 this.setState({picture_path: response.data});
                 console.log("The file is successfully uploaded");
             }).catch((error) => {
+                console.log('something failed')
         });
     }
     render(){
@@ -79,12 +80,11 @@ class Register extends React.Component {
         this.setState({[event.target.id]: event.target.value})
     }
     sendMessage(event){
-        console.log('ask;ja;sdlkna;slk');
         event.preventDefault()
         // From: https://stackoverflow.com/questions/50774176/sending-file-and-json-in-post-multipart-form-data-request-with-axios
         axios({
           method: 'post',
-          url: 'http://localhost:3000/users',
+          url: 'http://localhost:8081/users',
           data: this.state
         })
     }

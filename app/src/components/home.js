@@ -24,7 +24,7 @@ class Home extends React.Component {
         event.preventDefault()
         console.log(this.state.message)
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", 'http://localhost:3000', true);
+        xhr.open("POST", 'http://localhost:8081', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         console.log('{"Cheese":"'+this.state.message+'"}')
         xhr.send('{"Cheese":"'+this.state.message+'"}');

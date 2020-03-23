@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import home from './components/home';
 import register from './components/register';
 import user from './components/user';
+import login from './components/login';
+import profile from './components/profile';
+
 import logo from './big-goose.png';
 import './App.css';
 
@@ -24,6 +27,8 @@ class App extends React.Component {
                         <Route path="/" component={home} exact/>
                         <Route path="/register" component={register}/>
                         <Route path="/user/:id" component={user}/>
+                        <Route path="/login" component={login}/>
+                        <Route path="/profile" component={profile}/>
                     </Switch>
                 </BrowserRouter>
             </div>

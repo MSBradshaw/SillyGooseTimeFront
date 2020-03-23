@@ -1,0 +1,4 @@
+.edit_button:hover {
+	cursor: pointer;
+	opacity: .5;
+}
