@@ -30,7 +30,7 @@ class NavBar extends React.Component {
 	            <div>
 					<a class="nav_item" href="/">Home</a>
 					<a class="nav_item" href="/profile">Profile</a>
-					<a class="nav_item" href="/profile">Matches</a>
+					<a class="nav_item" href="/matches">Matches</a>
 					<span class="nav_item" onClick={this.logout}>Logout</span>
 				</div>
 	        )

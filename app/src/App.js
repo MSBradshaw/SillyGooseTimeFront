@@ -8,6 +8,7 @@ import profile from './components/profile';
 import updateprofile from './components/updateprofile';
 import registeruser from './components/registeruser';
 import registerplace from './components/registerplace';
+import matches from './components/matches';
 import NavBar from './components/navbar';
 
 import logo from './big-goose.png';
@@ -36,6 +37,7 @@ class App extends React.Component {
                         <Route path="/updateprofile" component={updateprofile}/>
                         <Route path="/registeruser" component={registeruser}/>
                         <Route path="/registerplace" component={registerplace}/>
+                        <Route path="/matches" component={matches}/>
                     </Switch>
                 </BrowserRouter>
             </div>
