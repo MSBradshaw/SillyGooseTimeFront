@@ -103,9 +103,7 @@ class Matches extends React.Component {
 			self.setState({'matches': response['data']['matches'],'users':users})
 		});
 	}
-	accept_or_reject(matchid,userid,status){
-		console.log(matchid + ' ' + userid + ' ' + status)
-	}
+
     render(){
 		var pending_matches = []
 		var accepted_matches = []
@@ -155,10 +153,10 @@ class Matches extends React.Component {
 			// create the match HTML
 			var item = (
 				<div class="match">
-					<p class="match__title">
-						<span class="match__title_activity">{this.state['matches'][i]['activity']} at</span>
-						<span class="match__title_place">{this.state['users'][place_int]['name']}</span>
-					</p>
+					<a class="match__title" href={"/match/" + this.state['matches'][i]['match_id']}>						
+							<span class="match__title_activity">{this.state['matches'][i]['activity']} at</span>
+							<span class="match__title_place">{this.state['users'][place_int]['name']}</span>
+					</a>
 					{participants}
 					{pending_buttons}
 				</div>
@@ -190,6 +188,21 @@ class Matches extends React.Component {
 			</div>
         )
     }
+	accept_or_reject(matchid,userid,status){
+		console.log(matchid + ' ' + userid + ' ' + status)
+		var data = {
+			match_id: matchid,
+			userid: userid,
+			status: status
+		}
+		axios({
+			method: 'patch',
+			url: 'http://localhost:8081/matches',
+			data: data
+		}).then(function(rep){
+			window.location.replace("/matches");
+		})
+	}
 }
 
 export default Matches;
