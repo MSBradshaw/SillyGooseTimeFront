@@ -8,73 +8,7 @@ class Matches extends React.Component {
 
     constructor(props) {
         super(props);
-		// state currently has a bunch of filler test data commented out it in
         this.state = {
-			// matches:
-			// [
-			// 	{
-			// 		match_id: 2,
-			// 		people:"1,4,7",
-			// 		place:6,
-			// 		activity:"soccer",
-			// 		status:{1:'accepted',4:'pending',7:'pending'}
-			// 	},
-			// 	{
-			// 		match_id: 2,
-			// 		people:"1,4,7",
-			// 		place:6,
-			// 		activity:"soccer",
-			// 		status:{1:'pending',4:'pending',7:'pending'}
-			// 	},
-			// 	{
-			// 		match_id: 2,
-			// 		people:"1,4,7",
-			// 		place:6,
-			// 		activity:"soccer",
-			// 		status:{1:'accepted',4:'accepted',7:'accepted'}
-			// 	},
-			// 	{
-			// 		match_id: 2,
-			// 		people:"1,2,4,7",
-			// 		place:6,
-			// 		activity:"soccer",
-			// 		status:{1:'pending',2:'rejected',4:'accepted',7:'pending'}
-			// 	}
-			// ],
-			// users:
-			// {
-			// 	1:{
-			// 		userid: 1,
-			// 		name: 'Michael B',
-			// 		picture_path: "IMAGE-1585082902952.jpg",
-			// 		type_of_user: 'users'
-			// 	},
-			// 	2:{
-			// 		userid: 2,
-			// 		name: 'Michael Raccoon',
-			// 		picture_path: "IMAGE-1585082902952.jpg",
-			// 		type_of_user: 'users'
-			// 	},
-			// 	4:{
-			// 		userid: 4,
-			// 		name: 'baby yoda and pikachu',
-			// 		picture_path: "IMAGE-1585082982088.jpg",
-			// 		type_of_user: 'users'
-			// 	},
-			// 	6:{
-			// 		userid: 6,
-			// 		name: 'Kitt Field',
-			// 		picture_path: "IMAGE-1585083078951.jpg",
-			// 		type_of_user: 'users'
-			// 	},
-			// 	7:{
-			// 		userid: 7,
-			// 		name: 'Muphens!',
-			// 		picture_path: "IMAGE-1585083137898.jpg",
-			// 		type_of_user: 'users'
-			// 	}
-			//
-			// }
         }
     }
 
@@ -153,7 +87,7 @@ class Matches extends React.Component {
 			// create the match HTML
 			var item = (
 				<div class="match">
-					<a class="match__title" href={"/match/" + this.state['matches'][i]['match_id']}>						
+					<a class="match__title" href={"/match/" + this.state['matches'][i]['match_id']}>
 							<span class="match__title_activity">{this.state['matches'][i]['activity']} at</span>
 							<span class="match__title_place">{this.state['users'][place_int]['name']}</span>
 					</a>
