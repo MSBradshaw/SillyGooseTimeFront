@@ -5,6 +5,7 @@
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  margin: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,7 +23,7 @@
   justify-content: center;
   font-size: 46px;
   font-weight: bold;
-  color: white;
+  color: #fbd514;
 }
 
 @keyframes App-logo-spin {
@@ -51,4 +52,18 @@ button:hover{
     background: #ddd;
     opacity: .5;
     cursor: pointer;
+}
+
+.title_wrapper {
+    width: 500px;
+    max-height: 100px;
+}
+
+.title_wrapper path {
+    opacity: 0;
+}
+
+.title_wrapper text {
+    font-size: 57px;
+    fill: #fbd514;
 }
