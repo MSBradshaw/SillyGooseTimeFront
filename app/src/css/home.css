@@ -1,0 +1,15 @@
+.homepage{
+	width: 1000px;
+	font-size: 30px;
+	font-family: sans-serif;
+	margin: 0 auto;
+}
+
+.homepage__img_wrapper {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.homepage__img_wrapper img {
+	width: 100%;
+}

@@ -1,8 +1,10 @@
 .nav_item{
 	z-index: 1;
-	margin: 10px;
+	margin: 20px;
 	color: white;
+	font-size: 32px;
 	text-decoration: none;
+	font-weight: normal;
 }
 
 .nav_item:hover {
