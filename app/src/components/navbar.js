@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/navbar.css';
 import {delete_cookies, get_auth_cookies} from '../cookies';
 
-const axios = require("axios");
+// const axios = require("axios");
 
 class NavBar extends React.Component {
     constructor(props) {

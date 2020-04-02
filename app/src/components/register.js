@@ -82,7 +82,7 @@ class Register extends React.Component {
     sendMessage(event){
         event.preventDefault()
         // From: https://stackoverflow.com/questions/50774176/sending-file-and-json-in-post-multipart-form-data-request-with-axios
-        var self = this;
+        // var self = this;
         axios({
           method: 'post',
           url: 'http://localhost:8081/users',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import home from './components/home';
-import register from './components/register';
+// import register from './components/register';
 import user from './components/user';
 import login from './components/login';
 import profile from './components/profile';
@@ -16,9 +16,9 @@ import logo from './big-goose.png';
 import './App.css';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render(){
         return(
             <div className="App">

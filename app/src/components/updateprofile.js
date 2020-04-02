@@ -1,7 +1,9 @@
 import React from 'react';
 import '../css/updateprofile.css';
 import '../css/register.css';
-import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+import {get_auth_cookies} from '../cookies';
+
 
 const axios = require("axios");
 
@@ -87,7 +89,7 @@ class UpdateProfile extends React.Component {
                     <textarea type="text" id="bio" default="Banana" value={this.state.bio} onChange={this.onMessageChange.bind(this)}></textarea>
                 </div>
 				<div class="user-profile__image-wrapper">
-					<img src={"http://localhost:8082/" + this.state['picture_path']} />
+					<img src={"http://localhost:8082/" + this.state['picture_path']} alt="" />
 				</div>
 				<p class="change_photo_label">Change Photo</p>
                 <div class="form_item photo_upload">
