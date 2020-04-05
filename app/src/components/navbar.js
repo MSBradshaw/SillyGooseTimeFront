@@ -25,7 +25,10 @@ class NavBar extends React.Component {
 	}
     render(){
 		var cookies = get_auth_cookies();
-		if(cookies !== -1){
+        console.log('--------')
+        console.log(cookies)
+        console.log('--------')
+		if(cookies !== -1 && cookies[0] !== 'email'){
 			return(
 	            <div>
 					<a class="nav_item" href="/">Home</a>
