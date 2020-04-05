@@ -28,7 +28,7 @@ class Register extends React.Component {
                 'content-type': 'multipart/form-data'
             }
         };
-        axios.post("http://localhost:8081/photos",formData,config)
+        axios.post("http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/photos",formData,config)
             .then((response) => {
                 console.log(response)
                 // the response if successful is the path to the file on the server
@@ -85,7 +85,7 @@ class Register extends React.Component {
         var self = this;
         axios({
           method: 'post',
-          url: 'http://localhost:8081/users',
+          url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/users',
           data: this.state
       }).then(function(response){
           window.location.replace("/login");

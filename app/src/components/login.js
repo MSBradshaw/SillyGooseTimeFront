@@ -44,7 +44,7 @@ class Login extends React.Component {
 		console.log(self.state)
 		axios({
 		  method: 'post',
-		  url: 'http://localhost:8081/login',
+		  url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/login',
 		  data: this.state
 		}).then(function (response) {
 			console.log('---Response----')

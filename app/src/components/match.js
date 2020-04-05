@@ -20,7 +20,7 @@ class User extends React.Component {
 		var self = this;
 		axios({
 			method: 'get',
-			url: 'http://localhost:8081/match/' + this.props.match.params['id']
+			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/match/' + this.props.match.params['id']
 		}).then(function(response){
 			console.log(response['data']['matches'])
 			var users = {}
@@ -119,7 +119,7 @@ class User extends React.Component {
 		var self = this;
 		axios({
 			method: 'patch',
-			url: 'http://localhost:8081/matches',
+			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/matches',
 			data: data
 		}).then(function(rep){
 			window.location.replace("/match/"+self.props.match.params['id']);

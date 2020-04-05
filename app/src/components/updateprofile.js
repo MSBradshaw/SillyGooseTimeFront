@@ -27,7 +27,7 @@ class UpdateProfile extends React.Component {
 		console.log(cookies)
 		console.log('-----')
 		// get the user's info form the back end based on the url param
-		fetch("http://localhost:8081/users/"+cookies[2])
+		fetch("http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/users/"+cookies[2])
         .then(res => res.json())
         .then((data) => {
           this.setState( data[0] )
@@ -45,7 +45,7 @@ class UpdateProfile extends React.Component {
                 'content-type': 'multipart/form-data'
             }
         };
-        axios.post("http://localhost:8081/photos",formData,config)
+        axios.post("http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/photos",formData,config)
             .then((response) => {
                 console.log(response)
                 // the response if successful is the path to the file on the server
@@ -107,7 +107,7 @@ class UpdateProfile extends React.Component {
         // From: https://stackoverflow.com/questions/50774176/sending-file-and-json-in-post-multipart-form-data-request-with-axios
         axios({
           method: 'post',
-          url: 'http://localhost:8081/usersupdate',
+          url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/usersupdate',
           data: this.state
         })
     }

@@ -21,7 +21,7 @@ class UserProp extends React.Component {
 
 	componentDidMount() {
 		// get the user's info form the back end based on the url param
-		fetch("http://localhost:8081/users/"+this.props.user_id)
+		fetch("http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/users/"+this.props.user_id)
         .then(res => res.json())
         .then((data) => {
 			data[0]['picture_path'] = data[0]['picture_path']

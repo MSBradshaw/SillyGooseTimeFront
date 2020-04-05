@@ -20,7 +20,7 @@ class Matches extends React.Component {
 		var data = {'userid':cookies[2],'auth':cookies[1]}
 		axios({
 			method: 'post',
-			url: 'http://localhost:8081/matches',
+			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/matches',
 			data: data
 		}).then(function(response){
 			console.log(response['data']['matches'])
@@ -131,7 +131,7 @@ class Matches extends React.Component {
 		}
 		axios({
 			method: 'patch',
-			url: 'http://localhost:8081/matches',
+			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/matches',
 			data: data
 		}).then(function(rep){
 			window.location.replace("/matches");
