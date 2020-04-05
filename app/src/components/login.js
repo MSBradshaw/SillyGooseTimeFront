@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/login.css';
-import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+import {get_auth_cookies, set_cookies} from '../cookies';
+
 
 const axios = require("axios");
 

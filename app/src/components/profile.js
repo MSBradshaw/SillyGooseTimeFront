@@ -1,10 +1,10 @@
 import React from 'react';
 import '../css/profile.css';
 import UserProp from './userprops';
-import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+import {get_auth_cookies} from '../cookies';
 
-
-const axios = require("axios");
+// const axios = require("axios");
 
 class Profile extends React.Component {
 

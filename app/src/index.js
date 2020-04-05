@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// Please refer this: https://www.npmjs.com/package/react-snapshot
+// import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
+
 import './index.css';
 import App from './App';
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

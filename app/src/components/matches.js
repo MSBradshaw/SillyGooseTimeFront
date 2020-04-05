@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/matches.css';
-import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
+import {get_auth_cookies} from '../cookies';
+
 
 const axios = require("axios");
 
@@ -26,11 +28,11 @@ class Matches extends React.Component {
 			console.log(response['data']['matches'])
 			var users = {}
 			// create an object of the users mapped with their userid as the key
-			for(var i in response['data']['users']){
+			for(let i in response['data']['users']){
 				users[response['data']['users'][i]['userid']] = response['data']['users'][i]
 			}
 			console.log(users)
-			for(var i in response['data']['matches']){
+			for(let i in response['data']['matches']){
 				response['data']['matches'][i]['status'] = JSON.parse(response['data']['matches'][i]['status'])
 			}
 			// save the info returned in the state
@@ -43,11 +45,11 @@ class Matches extends React.Component {
 		var accepted_matches = []
 		var rejected_matches = []
 		// create a match card for each match
-		for(var i in this.state['matches']){
+		for(let i in this.state['matches']){
 			// count the people's statuses
 			var status_counts = {'pending':0,'accepted':0,'rejected':0}
 			var keys = Object.keys(this.state['matches'][i]['status'])
-			for(var j in keys){
+			for(let j in keys){
 				var stat = this.state['matches'][i]['status'][keys[j]]
 				status_counts[stat] += 1
 			}
@@ -56,14 +58,14 @@ class Matches extends React.Component {
 			var place_int = parseInt(this.state['matches'][i]['place'])
 			var users = this.state['matches'][i]['people'].split(',')
 			var participants = []
-			for(var j in users){
+			for(let j in users){
 				var status = this.state['matches'][i]['status'][users[parseInt(j)]]
 				var name = this.state.users[users[parseInt(j)]]['name']
 				var picture = this.state.users[users[parseInt(j)]]['picture_path']
 				participants.push(
 					<a class="person" href={"http://localhost:3000/user/" + this.state.users[users[parseInt(j)]]['userid']}>
 						<div class="person__image_wrapper">
-							<img src={"http://localhost:8082/" + picture} />
+							<img src={"http://localhost:8082/" + picture} alt="" />
 						</div>
 						<p class={"person__status " + status}>{status}</p>
 						<p class="person__name">{name}</p>
@@ -99,7 +101,7 @@ class Matches extends React.Component {
 			// assign the match to one of the status groups
 			if(status_counts['rejected'] > 0){
 				rejected_matches.push(item)
-			}else if (status_counts['accepted'] == keys.length){
+			}else if (status_counts['accepted'] === keys.length){
 				accepted_matches.push(item)
 			}else{
 				pending_matches.push(item)
