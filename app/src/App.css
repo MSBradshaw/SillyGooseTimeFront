@@ -67,3 +67,8 @@ button:hover{
     font-size: 57px;
     fill: #fbd514;
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
