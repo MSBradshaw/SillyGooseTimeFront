@@ -22,13 +22,12 @@ class User extends React.Component {
 			method: 'get',
 			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/match/' + this.props.match.params['id']
 		}).then(function(response){
-			console.log(response['data']['matches'])
+			// console.log(response['data']['matches'])
 			var users = {}
 			// create an object of the users mapped with their userid as the key
 			for(let i in response['data']['users']){
 				users[response['data']['users'][i]['userid']] = response['data']['users'][i]
 			}
-			console.log(users)
 			for(let i in response['data']['matches']){
 				response['data']['matches'][i]['status'] = JSON.parse(response['data']['matches'][i]['status'])
 			}
@@ -110,7 +109,6 @@ class User extends React.Component {
         )
     }
 	accept_or_reject(matchid,userid,status){
-		console.log(matchid + ' ' + userid + ' ' + status)
 		var data = {
 			match_id: matchid,
 			userid: userid,

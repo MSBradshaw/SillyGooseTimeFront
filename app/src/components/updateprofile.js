@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/updateprofile.css';
 import '../css/register.css';
-// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
 import {get_auth_cookies} from '../cookies';
 
 
@@ -25,9 +24,6 @@ class UpdateProfile extends React.Component {
 
 	componentDidMount() {
 		var cookies = get_auth_cookies();
-		console.log('-----')
-		console.log(cookies)
-		console.log('-----')
 		// get the user's info form the back end based on the url param
 		fetch("http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/users/"+cookies[2])
         .then(res => res.json())
@@ -38,8 +34,6 @@ class UpdateProfile extends React.Component {
 	}
 
     onChange(e) {
-        console.log('image changed!')
-
         const formData = new FormData();
         formData.append('myImage',e.target.files[0]);
         const config = {
@@ -89,7 +83,7 @@ class UpdateProfile extends React.Component {
                     <textarea type="text" id="bio" default="Banana" value={this.state.bio} onChange={this.onMessageChange.bind(this)}></textarea>
                 </div>
 				<div class="user-profile__image-wrapper">
-					<img src={"http://localhost:8082/" + this.state['picture_path']} alt="" />
+					<img src={"http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/" + this.state['picture_path']} alt="" />
 				</div>
 				<p class="change_photo_label">Change Photo</p>
                 <div class="form_item photo_upload">
@@ -100,8 +94,6 @@ class UpdateProfile extends React.Component {
         )
     }
     onMessageChange(event){
-        console.log(event.target.value);
-        // this {state item: value}
         this.setState({[event.target.id]: event.target.value})
     }
     sendMessage(event){

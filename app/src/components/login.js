@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/login.css';
-// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
-import {get_auth_cookies, set_cookies} from '../cookies';
+import {set_cookies} from '../cookies';
 
 
 const axios = require("axios");
@@ -18,9 +17,6 @@ class Login extends React.Component {
     }
 
     render(){
-		console.log('--------');
-		console.log(get_auth_cookies());
-		console.log('--------');
         return(
 			<form>
 				<div class="form_item">
@@ -37,25 +33,19 @@ class Login extends React.Component {
     }
 
 	onMessageChange(event){
-		console.log(event.target.value);
 		this.setState({[event.target.id]: event.target.value})
 	}
 	sendMessage(event){
 		event.preventDefault()
 		var self = this;
-		console.log(self.state)
 		axios({
 		  method: 'post',
 		  url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/login',
 		  data: this.state
 		}).then(function (response) {
-			console.log('---Response----')
-			console.log(response);
-			console.log('-------')
 			set_cookies(self.state.email,response['data']['auth'],response['data']['id']);
 			window.location.replace("/");
 		}).catch(error => {
-		    console.log(error.response['data'])
 			alert(error.response['data']);
 		});
 	}
