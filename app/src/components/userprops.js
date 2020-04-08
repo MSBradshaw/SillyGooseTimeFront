@@ -35,7 +35,7 @@ class UserProp extends React.Component {
 			<div class="user-profile">
             	<h1>{this.state.info['name']}</h1>
 				<div class="user-profile__image-wrapper">
-					<img src={"http://localhost:8082/" + this.state.info['picture_path']} alt="" />
+					<img src={"http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/" + this.state.info['picture_path']} alt="" />
 				</div>
 				<p class="user-profile__info">Interests - {this.state.info['interests']}</p>
 				<p class="user-profile__info">Zip - {this.state.info['location']}</p>

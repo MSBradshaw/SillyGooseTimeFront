@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import home from './components/home';
-// import register from './components/register';
 import user from './components/user';
 import login from './components/login';
 import profile from './components/profile';

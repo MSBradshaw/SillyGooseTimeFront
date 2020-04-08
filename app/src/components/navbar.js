@@ -2,8 +2,6 @@ import React from 'react';
 import '../css/navbar.css';
 import {delete_cookies, get_auth_cookies} from '../cookies';
 
-// const axios = require("axios");
-
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -14,20 +12,13 @@ class NavBar extends React.Component {
 
 	componentDidMount() {
 		var cookies = get_auth_cookies();
-		console.log('-----')
-		console.log(cookies)
-		console.log('-----')
 	}
 	logout(){
-		console.log('logging out');
 		delete_cookies();
 		window.location.replace("/");
 	}
     render(){
 		var cookies = get_auth_cookies();
-        console.log('--------')
-        console.log(cookies)
-        console.log('--------')
 		if(cookies !== -1 && cookies[0] !== 'email'){
 			return(
 	            <div>

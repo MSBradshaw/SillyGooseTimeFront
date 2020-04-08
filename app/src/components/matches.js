@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/matches.css';
-// import {delete_cookies, get_auth_cookies, set_cookies} from '../cookies';
 import {get_auth_cookies} from '../cookies';
 
 
@@ -25,13 +24,11 @@ class Matches extends React.Component {
 			url: 'http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/matches',
 			data: data
 		}).then(function(response){
-			console.log(response['data']['matches'])
 			var users = {}
 			// create an object of the users mapped with their userid as the key
 			for(let i in response['data']['users']){
 				users[response['data']['users'][i]['userid']] = response['data']['users'][i]
 			}
-			console.log(users)
 			for(let i in response['data']['matches']){
 				response['data']['matches'][i]['status'] = JSON.parse(response['data']['matches'][i]['status'])
 			}
@@ -125,7 +122,6 @@ class Matches extends React.Component {
         )
     }
 	accept_or_reject(matchid,userid,status){
-		console.log(matchid + ' ' + userid + ' ' + status)
 		var data = {
 			match_id: matchid,
 			userid: userid,
