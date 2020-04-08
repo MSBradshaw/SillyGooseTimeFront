@@ -1,5 +1,6 @@
 # SillyGooseTimeFront
-Look at the big spinning goose!
+
+To access the site, go to [Silly Goose Tim](https://d2zpy5wfaq7i0y.cloudfront.net/). Look at the big spinning goose!
 
 # Deployment instructions
 To launch the app locally, first go to `app/` then run `npm install` followed by `npm start`.
