@@ -60,9 +60,9 @@ class Matches extends React.Component {
 				var name = this.state.users[users[parseInt(j)]]['name']
 				var picture = this.state.users[users[parseInt(j)]]['picture_path']
 				participants.push(
-					<a class="person" href={"http://localhost:3000/user/" + this.state.users[users[parseInt(j)]]['userid']}>
+					<a class="person" href={"/user/" + this.state.users[users[parseInt(j)]]['userid']}>
 						<div class="person__image_wrapper">
-							<img src={"http://localhost:8082/" + picture} alt="" />
+							<img src={"http://sillygoosetimeback-dev.us-east-2.elasticbeanstalk.com/" + picture} alt="" />
 						</div>
 						<p class={"person__status " + status}>{status}</p>
 						<p class="person__name">{name}</p>
